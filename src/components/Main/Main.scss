@@ -24,6 +24,7 @@
   &__header {
     display: flex;
     justify-content: space-between;
+    padding-bottom: 40px;
 
     @media screen and (max-width: 800px) {
       & {

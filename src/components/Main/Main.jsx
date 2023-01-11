@@ -1,5 +1,5 @@
 import './Main.scss'
-
+import Users from '../Users/Users'
 function Main() {
   return (
     <main className="main">
@@ -7,6 +7,8 @@ function Main() {
         <h1 className='main__title'>Список пользователей</h1>
         <input className='main__search' placeholder='Поиск...'></input>
       </div>
+
+      <Users />
     </main>
   );
 }
