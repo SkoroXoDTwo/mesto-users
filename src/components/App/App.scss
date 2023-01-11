@@ -1,5 +1,4 @@
 .app {
-  padding: 120px 0;
   margin: 0 auto;
   max-width: 1280px;
   width: 100%;
@@ -8,9 +7,8 @@
   position: relative;
 
   &__container {
-    box-sizing: border-box;
-    padding: 0 40px;
-    max-width: 880px;
+    max-width: 1280px;
     width: 100%;
+    margin: 0 auto;
   }
 }
