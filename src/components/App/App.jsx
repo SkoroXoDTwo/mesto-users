@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import './App.scss';
 import api from '../../utils/Api'
 import Header from '../Header/Header';
+import Main from '../Main/Main';
 
 function App() {
   useEffect(() => {
@@ -14,6 +15,7 @@ function App() {
     <div className="app">
       <div className='app__container'>
         <Header />
+        <Main />
       </div>
     </div>
   );
