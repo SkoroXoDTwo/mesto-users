@@ -1,3 +1,58 @@
 .user {
   color: #fff;
+
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__avatar {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @media screen and (max-width: 500px) {
+      align-items: center;
+    }
+
+    @media screen and (max-width: 1024px) {
+      width: 288px;
+    }
+  }
+
+  &__name {
+    padding: 0;
+    margin: 0;
+    font-size: 24px;
+    font-weight: 900;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  &__about {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 400;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+    @media screen and (max-width: 500px) {
+      text-align: center;
+    }
+  }
 }
