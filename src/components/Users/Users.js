@@ -11,7 +11,7 @@ function Users() {
     dispatch(loadUsers());
   }, []);
 
-  const users = useSelector((state) => state.users);
+  const {list: users, status, error} = useSelector((state) => state.users);
   const filter = useSelector((state) => state.filter);
 
   const filterUsers = users.filter((user) =>

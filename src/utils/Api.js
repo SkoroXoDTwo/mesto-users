@@ -3,27 +3,27 @@ class Api {
       this._baseUrl = baseUrl;
       this._headers = headers;
     }
-  
+
     _checkResponse(res) {
       if (res.ok) {
         return res.json();
       }
-  
+
       return Promise.reject(`Ошибка: ${res.status}`);
     }
-  
+
     getInitialCards() {
       return fetch(`${this._baseUrl}/cards`, {
         headers: this._headers,
       }).then(this._checkResponse);
     }
-  
+
     getInitialUsersInfo() {
       return fetch(`${this._baseUrl}/users/`, {
         headers: this._headers,
       }).then(this._checkResponse);
     }
-  
+
     pathUserInfo(data) {
       return fetch(`${this._baseUrl}/users/me`, {
         method: "PATCH",
@@ -34,7 +34,7 @@ class Api {
         }),
       }).then(this._checkResponse);
     }
-  
+
     postCard(data) {
       return fetch(`${this._baseUrl}/cards`, {
         method: "POST",
@@ -45,33 +45,33 @@ class Api {
         }),
       }).then(this._checkResponse);
     }
-  
+
     deleteCard(cardId) {
       return fetch(`${this._baseUrl}/cards/${cardId}`, {
         method: "DELETE",
         headers: this._headers,
       }).then(this._checkResponse);
     }
-  
+
     _putCardLike(cardId) {
       return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
         method: "PUT",
         headers: this._headers,
       }).then(this._checkResponse);
     }
-  
+
     _deleteCardLike(cardId) {
       return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
         method: "DELETE",
         headers: this._headers,
       }).then(this._checkResponse);
     }
-  
+
     changeLikeCardStatus(cardId, isLiked) {
       const result = isLiked ? this._deleteCardLike(cardId) : this._putCardLike(cardId);
       return result;
     }
-  
+
     patchAvatar(data) {
       return fetch(`${this._baseUrl}/users/me/avatar`, {
         method: "PATCH",
@@ -82,7 +82,7 @@ class Api {
       }).then(this._checkResponse);
     }
   }
-  
+
   const api = new Api({
     baseUrl: "https://nomoreparties.co/v1/cohort-55",
     headers: {
@@ -90,6 +90,5 @@ class Api {
       "Content-Type": "application/json",
     },
   });
-  
+
   export default api;
-  
