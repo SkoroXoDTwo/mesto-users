@@ -11,11 +11,16 @@ function Users() {
     dispatch(loadUsers());
   }, []);
 
-  const users = useSelector(state => state.users)
+  const users = useSelector((state) => state.users);
+  const filter = useSelector((state) => state.filter);
+
+  const filterUsers = users.filter((user) =>
+    user.name.toLowerCase().includes(filter.toLowerCase())
+  );
 
   return (
     <ul className="users">
-      {users.map((user) => (
+      {filterUsers.map((user) => (
         <User
           key={user._id}
           name={user.name}
