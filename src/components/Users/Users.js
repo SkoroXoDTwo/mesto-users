@@ -1,27 +1,17 @@
 import "./Users.scss";
 import User from "../User/User";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { loadUsers } from "../../store/users/usersActions";
 
 function Users() {
-  const users = [
-    {
-      name: "Alex",
-      about: "Учусь на Frontend-разработчика fdf fdf  df d fdfdf df d fdfdf fdf  df d fdfdf fdf  df d fdfdf fdf  df d fdfdf fdf  df d fdfdf fdf  df d fdfdf ",
-      avatar: "https://www.amworld.ru/upload/000/u3/3/4/aaeef86e.jpg",
-      _id: 1,
-    },
-    {
-      name: "Alex",
-      about: "Учусь на Frontend-разработчика",
-      avatar: "https://www.amworld.ru/upload/000/u3/3/4/aaeef86e.jpg",
-      _id: 2,
-    },
-    {
-      name: "Alex",
-      about: "Учусь на Frontend-разработчика",
-      avatar: "https://www.amworld.ru/upload/000/u3/3/4/aaeef86e.jpg",
-      _id: 3,
-    },
-  ];
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(loadUsers());
+  }, []);
+
+  const users = useSelector(state => state.users)
 
   return (
     <ul className="users">

@@ -4,6 +4,7 @@
   display: flex;
   align-items: center;
   gap: 20px;
+  width: 100%;
 
   @media screen and (max-width: 500px) {
     flex-direction: column;
@@ -39,6 +40,11 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    width: 288px;
+
+    @media screen and (max-width: 500px) {
+      text-align: center;
+    }
   }
 
   &__about {
