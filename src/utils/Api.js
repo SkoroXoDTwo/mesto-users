@@ -19,7 +19,7 @@ class Api {
     }
 
     getInitialUsersInfo() {
-      return fetch(`${this._baseUrl}/uses/`, {
+      return fetch(`${this._baseUrl}/users/`, {
         headers: this._headers,
       }).then(this._checkResponse);
     }

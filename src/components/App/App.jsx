@@ -4,6 +4,7 @@ import Main from '../Main/Main';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import { useSelector } from 'react-redux';
 
+
 function App() {
   const { error } = useSelector((state) => state.users);
 
@@ -12,7 +13,7 @@ function App() {
       <div className='app__container'>
         <Header />
         <Main />
-        {error && <ErrorMessage error={error}/>}
+        {error && <ErrorMessage error={error} />}
       </div>
     </div>
   );

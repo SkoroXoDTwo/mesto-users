@@ -1,7 +1,7 @@
 import { ADD_USERS, SET_LOADING, SET_ERROR } from "./usersConst";
 
 const initialState = {
-  status: "idle",
+  isLoading: true,
   list: [],
   error: null,
 };
@@ -11,21 +11,21 @@ export const usersReducer = (state = initialState, action) => {
     case ADD_USERS:
       return {
         ...state,
-        status: "fullfield",
+        isLoading: false,
         list: action.payload,
       };
 
     case SET_LOADING:
       return {
         ...state,
-        status: "loading",
+        isLoading: true,
         error: null,
       };
 
     case SET_ERROR:
       return {
         ...state,
-        status: "rejected",
+        isLoading: false,
         error: action.payload,
       };
 

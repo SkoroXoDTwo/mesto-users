@@ -1,0 +1,78 @@
+@keyframes gradient-bg-anim {
+  0% {
+    background-position: 80% 0%;
+  }
+  50% {
+    background-position: 20% 100%;
+  }
+  100% {
+    background-position: 80% 0%;
+  }
+}
+
+.user-loader {
+  color: #fff;
+  opacity: 0.5;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__avatar {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(
+      90deg,
+      rgba(110, 110, 110, 1) 0%,
+      rgba(191, 187, 187, 1) 100%
+    );
+    background-size: 400%;
+    animation: 2s infinite alternate gradient-bg-anim;
+    border-radius: 50%;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @media screen and (max-width: 500px) {
+      align-items: center;
+    }
+
+    @media screen and (max-width: 1024px) {
+      width: 288px;
+    }
+  }
+
+  &__name {
+    border-radius: 20px;
+    background: linear-gradient(
+      90deg,
+      rgba(110, 110, 110, 1) 0%,
+      rgba(191, 187, 187, 1) 100%
+    );
+    background-size: 200%;
+    animation: 2s infinite alternate gradient-bg-anim;
+    width: 150px;
+    height: 24px;
+  }
+
+  &__about {
+    border-radius: 20px;
+    background: linear-gradient(
+      90deg,
+      rgba(110, 110, 110, 1) 0%,
+      rgba(191, 187, 187, 1) 100%
+    );
+    background-size: 200%;
+    animation: 2s infinite alternate gradient-bg-anim;
+    width: 238px;
+    height: 19px;
+  }
+}
